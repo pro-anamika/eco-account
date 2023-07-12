@@ -1,0 +1,15 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+{% block messages %}
+<p>This is a drill
+    {% if messages %}
+        <div class="custom-messages">
+            {% for message in messages %}
+                <div class="custom-message {% if message.tags %}{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+<script src="{% static 'room.js' %}"></script>
+{% endblock %}
